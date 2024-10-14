@@ -1,6 +1,16 @@
-import React from "react";
+import React, { useContext, useRef } from "react";
+import { NewsContext } from "../ContextApi/store";
 
 const Navbar = () => {
+  const contextObj = useContext(NewsContext);
+  const searchContext = contextObj.handleSearch;
+  let inputSeach = useRef();
+
+  const onSearch = (e) => {
+    e.preventDefault();
+
+    searchContext(inputSeach.current.value);
+  };
   return (
     <div>
       <nav
@@ -9,7 +19,7 @@ const Navbar = () => {
       >
         <div class="container-fluid">
           <a class="navbar-brand" href="#">
-            <h1> Up 2 Date !!</h1>
+            <h1 className="my-h1"> Up 2 Date !!</h1>
           </a>
           <button
             class="navbar-toggler collapsed"
@@ -27,25 +37,26 @@ const Navbar = () => {
             <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="#">
-                  Home
+                  Sports
                 </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">
-                  Link
+                  Politics
                 </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" aria-disabled="true">
-                  Disabled
+                  Health
                 </a>
               </li>
             </ul>
-            <form className=" d-flex" role="search">
+            <form className=" d-flex" role="search" onSubmit={onSearch}>
               <input
                 class="form-control me-2"
+                ref={inputSeach}
                 type="search"
-                placeholder="Search"
+                placeholder="Search News"
                 aria-label="Search"
               />
               <button class="btn btn-outline-success" type="submit">

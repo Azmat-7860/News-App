@@ -1,20 +1,22 @@
 import React from "react";
 
-const Card = () => {
+const Card = ({ newsItem }) => {
+  // console.log(newsItem);
+
   return (
-    <div>
-      <div class="card" style="width: 18rem;">
-        <img src="..." class="card-img-top" alt="..." />
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-          </p>
-          <a href="#" class="btn btn-primary">
-            Go somewhere
-          </a>
-        </div>
+    <div class="card" style={{ width: "18rem" }}>
+      <img
+        src={newsItem.urlToImage}
+        style={{ minHeight: "200px" }}
+        class="card-img-top"
+        alt="No image available"
+      />
+      <div class="card-body ">
+        <h5 class="card-title">{newsItem.title}</h5>
+        <p class="card-text">{newsItem.content}</p>
+        <a href={newsItem.url} class="btn btn-outline-primary">
+          Read More
+        </a>
       </div>
     </div>
   );
