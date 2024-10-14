@@ -6,7 +6,7 @@ const Card = ({ newsItem }) => {
   return (
     <div class="card" style={{ width: "18rem" }}>
       <img
-        src={newsItem.urlToImage}
+        src={newsItem.image}
         style={{ minHeight: "200px" }}
         class="card-img-top"
         alt="No image available"
