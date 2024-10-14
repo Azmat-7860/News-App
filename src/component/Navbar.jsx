@@ -4,12 +4,14 @@ import { NewsContext } from "../ContextApi/store";
 const Navbar = () => {
   const contextObj = useContext(NewsContext);
   const searchContext = contextObj.handleSearch;
-  let inputSeach = useRef();
+  let inputSeachRef = useRef();
 
   const onSearch = (e) => {
     e.preventDefault();
-
-    searchContext(inputSeach.current.value);
+    const inputSearch = inputSeachRef.current.value;
+    if (inputSearch) {
+      searchContext(inputSearch);
+    }
   };
   return (
     <div>
@@ -36,30 +38,58 @@ const Navbar = () => {
           <div class="navbar-collapse collapse" id="navbarsExample09">
             <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">
+                <a
+                  class="nav-link active"
+                  onClick={(e) => searchContext(e.target.textContent)}
+                  aria-current="page"
+                  href="#"
+                >
                   Sports
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a
+                  class="nav-link active"
+                  onClick={(e) => searchContext(e.target.textContent)}
+                  href="#"
+                >
                   Politics
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" aria-disabled="true">
+                <a
+                  class="nav-link active"
+                  onClick={(e) => searchContext(e.target.textContent)}
+                >
                   Health
+                </a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  onClick={(e) => searchContext(e.target.textContent)}
+                >
+                  Technology
+                </a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  onClick={(e) => searchContext(e.target.textContent)}
+                >
+                  Business
                 </a>
               </li>
             </ul>
             <form className=" d-flex" role="search" onSubmit={onSearch}>
               <input
                 class="form-control me-2"
-                ref={inputSeach}
+                ref={inputSeachRef}
                 type="search"
                 placeholder="Search News"
                 aria-label="Search"
               />
-              <button class="btn btn-outline-success" type="submit">
+              <button class="btn btn-outline-primary" type="submit">
                 Search
               </button>
             </form>

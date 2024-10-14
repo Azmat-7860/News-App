@@ -16,8 +16,7 @@ export const NewsProvider = ({ children }) => {
   const [isData, setIsData] = useState(false);
 
   const handleSearch = (search) => {
-    console.log(search, "from store");
-
+    // console.log(search, "from store");
     setSerchNews(search);
   };
 
@@ -31,7 +30,7 @@ export const NewsProvider = ({ children }) => {
         );
         setIsData(true);
         const data = await response.json();
-        console.log(data.articles);
+        // console.log(data.articles);
 
         setNews(data.articles);
         // setIsData(true);
