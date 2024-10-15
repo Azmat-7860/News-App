@@ -6,6 +6,7 @@ import CardItem from "./CardItems";
 const Hero = () => {
   const contextobject = useContext(NewsContext);
   const data = contextobject.isData;
+
   return (
     <div>
       <div class="container my-2">
@@ -20,7 +21,7 @@ const Hero = () => {
         </div>
       </div>
       {/* <Loading /> */}
-      {data ? <CardItem /> : <Loading />}
+      {data ? <Loading /> : <CardItem />}
     </div>
   );
 };

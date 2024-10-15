@@ -1,33 +1,56 @@
-import React from "react";
+import React, { useContext } from "react";
+import { NewsContext } from "../ContextApi/store";
 
 const Footer = () => {
+  const contextObj = useContext(NewsContext);
+  const searchContext = contextObj.handleSearch;
   return (
     <div class="container">
       <footer class="py-3 my-4">
         <ul class="nav justify-content-center border-bottom pb-3 mb-3">
           <li class="nav-item">
-            <a href="#" class="nav-link px-2 text-body-secondary">
-              Home
+            <a
+              href="#"
+              onClick={(e) => searchContext(e.target.textContent)}
+              class="nav-link px-2 text-body-secondary"
+            >
+              Entertainment
             </a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link px-2 text-body-secondary">
-              Features
+            <a
+              href="#"
+              onClick={(e) => searchContext(e.target.textContent)}
+              class="nav-link px-2 text-body-secondary"
+            >
+              Science
             </a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link px-2 text-body-secondary">
-              Pricing
+            <a
+              href="#"
+              onClick={(e) => searchContext(e.target.textContent)}
+              class="nav-link px-2 text-body-secondary"
+            >
+              States
             </a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link px-2 text-body-secondary">
-              FAQs
+            <a
+              href="#"
+              onClick={(e) => searchContext(e.target.textContent)}
+              class="nav-link px-2 text-body-secondary"
+            >
+              Education
             </a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link px-2 text-body-secondary">
-              About
+            <a
+              href="#"
+              onClick={(e) => searchContext(e.target.textContent)}
+              class="nav-link px-2 text-body-secondary"
+            >
+              Movies
             </a>
           </li>
         </ul>
