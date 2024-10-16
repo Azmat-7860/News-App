@@ -7,7 +7,8 @@ export const NewsContext = createContext({
   handleSearch: () => {},
 });
 
-const API_KEY = "c5e6fa79680c6fcd528665d1fbf72dc8";
+const API_KEY = import.meta.env.VITE_API_KEY;
+console.log(API_KEY); // Will correctly log the value from your .env file
 
 export const NewsProvider = ({ children }) => {
   const [serchNews, setSerchNews] = useState("Latest");
@@ -20,18 +21,18 @@ export const NewsProvider = ({ children }) => {
 
   useEffect(() => {
     const fetchNews = async () => {
-      setIsData(true); // Set loading state to true before fetching
+      setIsData(true);
 
       try {
         const response = await fetch(
           `https://gnews.io/api/v4/search?q=${serchNews}&token=${API_KEY}&country=in`
         );
         const data = await response.json();
-        setNews(data.articles); // Update news state with fetched articles
+        setNews(data.articles);
       } catch (error) {
         console.error("Error fetching news:", error);
       } finally {
-        setIsData(false); // Ensure loading state is false after fetching is complete
+        setIsData(false);
       }
     };
 
