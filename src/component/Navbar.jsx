@@ -16,15 +16,15 @@ const Navbar = () => {
   return (
     <div>
       <nav
-        class="navbar navbar-expand-lg bg-body-tertiary rounded"
+        className="navbar navbar-expand-lg bg-body-tertiary rounded"
         aria-label="Eleventh navbar example"
       >
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">
+        <div className="container-fluid">
+          <a className="navbar-brand" href="#">
             <h1 className="my-h1"> Up 2 Date !!</h1>
           </a>
           <button
-            class="navbar-toggler collapsed"
+            className="navbar-toggler collapsed"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarsExample09"
@@ -32,14 +32,14 @@ const Navbar = () => {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span class="navbar-toggler-icon"></span>
+            <span className="navbar-toggler-icon"></span>
           </button>
 
-          <div class="navbar-collapse collapse" id="navbarsExample09">
-            <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-              <li class="nav-item">
+          <div className="navbar-collapse collapse" id="navbarsExample09">
+            <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
+              <li className="nav-item">
                 <a
-                  class="nav-link active"
+                  className="nav-link active"
                   onClick={(e) => searchContext(e.target.textContent)}
                   aria-current="page"
                   href="#"
@@ -47,34 +47,34 @@ const Navbar = () => {
                   Sports
                 </a>
               </li>
-              <li class="nav-item">
+              <li className="nav-item">
                 <a
-                  class="nav-link active"
+                  className="nav-link active"
                   onClick={(e) => searchContext(e.target.textContent)}
                   href="#"
                 >
                   Politics
                 </a>
               </li>
-              <li class="nav-item">
+              <li className="nav-item">
                 <a
-                  class="nav-link active"
+                  className="nav-link active"
                   onClick={(e) => searchContext(e.target.textContent)}
                 >
                   Health
                 </a>
               </li>
-              <li class="nav-item">
+              <li className="nav-item">
                 <a
-                  class="nav-link active"
+                  className="nav-link active"
                   onClick={(e) => searchContext(e.target.textContent)}
                 >
                   Technology
                 </a>
               </li>
-              <li class="nav-item">
+              <li className="nav-item">
                 <a
-                  class="nav-link active"
+                  className="nav-link active"
                   onClick={(e) => searchContext(e.target.textContent)}
                 >
                   Business
@@ -83,13 +83,13 @@ const Navbar = () => {
             </ul>
             <form className=" d-flex" role="search" onSubmit={onSearch}>
               <input
-                class="form-control me-2"
+                className="form-control me-2"
                 ref={inputSeachRef}
                 type="search"
                 placeholder="Search News"
                 aria-label="Search"
               />
-              <button class="btn btn-outline-primary" type="submit">
+              <button className="btn btn-outline-primary" type="submit">
                 Search
               </button>
             </form>

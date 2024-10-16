@@ -9,9 +9,9 @@ const Hero = () => {
 
   return (
     <div>
-      <div class="container my-2">
-        <div class="p-3 text-center bg-body-tertiary rounded-3">
-          <h1 class="text-body-emphasis">
+      <div className="container my-2">
+        <div className="p-3 text-center bg-body-tertiary rounded-3">
+          <h1 className="text-body-emphasis">
             Welcome to <span className="my-h1"> Up 2 Date !!</span>
           </h1>
           <p>
