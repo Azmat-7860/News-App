@@ -8,7 +8,6 @@ export const NewsContext = createContext({
 });
 
 const API_KEY = import.meta.env.VITE_API_KEY;
-console.log(API_KEY); // Will correctly log the value from your .env file
 
 export const NewsProvider = ({ children }) => {
   const [serchNews, setSerchNews] = useState("Latest");
