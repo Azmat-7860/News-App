@@ -9,7 +9,7 @@ const Card = ({ newsItem }) => {
         src={newsItem.image}
         style={{ minHeight: "200px" }}
         className="card-img-top"
-        alt="No image available"
+        alt="Image not available"
       />
       <div className="card-body ">
         <h5 className="card-title">{newsItem.title}</h5>
